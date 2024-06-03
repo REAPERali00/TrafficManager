@@ -1,7 +1,7 @@
+#include "traffic_light.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 int main() {
-  printf("Hello world\n");
+  run();
   return EXIT_SUCCESS;
 }
