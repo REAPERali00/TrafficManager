@@ -32,10 +32,13 @@ char *print_state(Traffic_light *light) {
 void queue_traffic() {
   int shm_fd;
   LIGHT_STATE *shm_state;
-  if (shm_fd = shm_open(SHM_NAME, O_CREAT | O_RDWR, 0666) == -1) {
+
+  shm_fd = shm_open(SHM_NAME, O_CREAT | O_RDWR, 0666);
+  if (shm_fd == -1) {
     perror("shm_open");
     exit(EXIT_FAILURE);
   }
+
   if (ftruncate(shm_fd, SHM_SIZE) == -1) {
     perror("shm_open");
     exit(EXIT_FAILURE);
