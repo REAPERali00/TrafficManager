@@ -1,15 +1,18 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.10)
 
-project(traffic)
+# Project name
+project(TrafficManagementSystem)
 
-# Specify the directory containing the source files
-set(CODE_DIR "${CMAKE_SOURCE_DIR}/src")
+# Specify the C standard
+set(CMAKE_C_STANDARD 99)
 
-# Collect all source files in the specified directory
-file(GLOB SOURCES "${CODE_DIR}/*.c" "${CODE_DIR}/*.h")
+# Define the output directory for executables
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../exe)
 
-# Add source to this project's executable: check name and dependencies
-add_executable(traffic ${SOURCES})
+# Add subdirectories for each component
+add_subdirectory(src/traffic)
+add_subdirectory(src/vehicle)
+add_subdirectory(src/pedestrian)
 
-# TO_DO: Add tests and install targets if needed.
-
+# Define the include directories
+include_directories(src)

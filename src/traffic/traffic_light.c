@@ -1,4 +1,4 @@
-#include "traffic_light.h"
+#include "../traffic_light.h"
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
